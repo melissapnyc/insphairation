@@ -1,0 +1,19 @@
+<head>
+<link rel="stylesheet" type="text/css" href="hairstyles/mystyle.css">
+</head>
+<body>
+<h1>{{ hairstyle.name }}</h1>
+<ul>
+    <li>{{ hairstyle.time_of_day }}</li>
+    <li>{{ hairstyle.length }}</li>
+    <li>{{ hairstyle.texture }}</li>
+    <li>{{ hairstyle.type }}</li>
+{% for image in hairstyle.image_set.all %}
+    <li>{{ image.image }}</li>
+    <img height="100%" src={{ image.image }}>
+{% endfor %}
+</ul>
+<a href="/hairstyles/{{ hairstyle.id }}/update">Update this Hairstyle!</a><br>
+<a href="/hairstyles/{{ hairstyle.id }}/delete">Delete this Hairstyle!</a><br>
+<a href="/hairstyles/">Back to List of Hairstyles!</a>
+</body>

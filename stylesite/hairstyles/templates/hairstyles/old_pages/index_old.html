@@ -1,0 +1,36 @@
+<head>
+<style media="screen" type="text/css">
+h2 {
+    color:dark grey;
+    font-family:Verdana;
+}
+div {
+    background-color:maroon;
+    color:beige;
+    font-family:Verdana;
+    text-align:center;
+    width:50%;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius:8px;
+    margin:0px;
+}
+a {
+    width:50%;
+    text-decoration:none;
+}
+</style>    
+</head>
+<body>
+
+<h2>Hairstyles List</h2>
+<a href="/hairstyles/add_style/"><div>Add New Hairstyle</div></a><br>
+<a href="/hairstyles/search/"><div>Find a Hairstyle!</div></a><br>
+{% if latest_hairstyle_list %}
+    {% for hairstyle in latest_hairstyle_list %}
+          <a href="/hairstyles/{{ hairstyle.id }}/"><div>{{ hairstyle.name }}</div></a><br>
+    {% endfor %}
+{% else %}
+    <p>No styles available yet.</p>
+{% endif %}
+</body>

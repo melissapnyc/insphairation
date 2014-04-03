@@ -1,0 +1,130 @@
+<head>
+<style media="screen" type="text/css">
+table {
+    border-collapse:collapse;
+    background-color:maroon;
+    color:white;
+    font-family:Verdana;
+    text-align:center;
+    border-radius:8px;
+    padding:2px;
+    margin:30px;
+    width:320px;
+    height:568px;
+}
+td, th {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+th {
+    font-family:"Mistral";
+    font-size:40px;
+}
+th span {
+    color:orange;
+}
+a {
+    width:50%;
+    text-decoration:none;
+    color:white;
+}
+#submit {
+    width:260px;
+    background-color: brown;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:4px;
+    color: #fff;
+    font-family: 'Verdana';
+    font-size: 22px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    padding:8px;
+    height:75px;
+}
+
+#submit:hover {
+    border: none;
+    background:darkorange;
+    box-shadow: 0px 0px 1px #fff;
+}
+input[type=radio] {
+    display:none;
+    margin:10px;
+}
+input[type=radio] + label {
+    display:inline-block;
+    margin:-2px;
+    width:60px;
+    padding: 4px 12px;
+    background-color: DimGray;
+    border-color: #ddd;
+}
+input[type=radio]:checked + label { 
+    background-image: none;
+    background-color:#009999;
+}
+input[type=radio] + label:hover {
+    font-weight: bold;
+}
+div {
+    background-color:#424242;
+    color:beige;
+    font-family:Verdana;
+    text-align:center;
+    width:90%;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:4px;
+    margin:0px;
+}
+div:hover {
+    background-color:gray;
+}
+</style>
+</head>
+
+<table>
+<tr></tr><tr></tr>
+<tr>
+  <th align="center" colspan="4"><i><a href="/hairstyles/"><span>inspHAIRation</span></a></i>
+</tr>
+<form action="/search_hairstyle">
+<tr>
+  <td colspan="4" align="center"><b>Well, it's a </i> week...</i></td>
+<tr>
+  <td colspan="2"><input type="radio" id="radio1" name="time" value="day" checked><label for="radio1">day</label>
+  <input type="radio" id="radio2" name="time" value="night"><label for="radio2">night</label>
+  <input type="radio" id="radio3" name="time" value="end"><label for="radio3">end</label></td></tr>
+<tr><td colspan="4"><hr></td></tr>
+<tr>
+  <td colspan="4" align="center"><b>My hair is</b></td>
+</tr>
+<tr>  
+  <td colspan="4"><input type="radio" id="radio4" name="length" value="long" checked><label for="radio4">long</label>
+  <input type="radio" id="radio5" name="length" value="medium"><label for="radio5">medium</label>
+  <input type="radio" id="radio6" name="length" value="short"><label for="radio6">short</label><br><br>
+  <b>and</b><br><br>
+  <input type="radio" id="radio7" name="texture" value="curly" checked><label for="radio7">curly</label>
+  <input type="radio" id="radio8" name="texture" value="wavy"><label for="radio8">wavy</label>
+  <input type="radio" id="radio9" name="texture" value="straight"><label for="radio9">straight</label></td>
+</tr>
+<tr><td colspan="4"><hr></td></tr>
+<tr>
+  <td colspan="4" align="center"><b>Oh, and I want it</b></td>
+</tr>
+<tr>
+  <td colspan="4"><input type="radio" id="radio10" name="type" value="up_do" checked><label for="radio10">up</label>
+  <input type="radio" id="radio11" name="type" value="half_up"><label for="radio11">half up</label>
+  <input type="radio" id="radio12" name="type" value="down"><label for="radio12">down</label></td>
+</tr>
+<tr>
+  <td colspan="4" align="center"><input type="submit" value="Inspire Me!" id="submit"></td>
+</tr>
+<tr></tr>
+<tr></tr>
+</form>
+</table>

@@ -1,0 +1,171 @@
+<head>
+<style media="screen" type="text/css">
+table {
+    border-collapse:collapse;
+    background-color:maroon;
+    color:white;
+    font-family:Verdana;
+    text-align:center;
+    border-radius:8px;
+    padding:0px;
+    margin:30px;
+    width:320px;
+    height:568px
+}
+td, th {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+th {
+    font-family:"Mistral";
+    font-size:40px;
+}
+.orange {
+    color:orange;
+}
+div {
+    background-color:maroon;
+    color:beige;
+    font-family:Verdana;
+    text-align:center;
+    border-radius:8px;
+    padding:0px;
+    margin:30px;
+    width:320px;
+    height:568px;
+}
+h2 {
+    color:dark grey;
+    font-family:"Mistral";
+    font-size:40px;
+}
+a {
+    width:50%;
+    text-decoration:none;
+    color:white;
+}
+input[type=radio] {
+    display:none;
+    margin:10px;
+}
+span {
+    width:190px;
+    height:336px;
+    background-color:#424242;
+    margin:0px;
+    display: inline-block;
+    padding:0px;
+    vertical-align:middle;
+}
+img {
+    height:auto;
+    width:auto;
+    max-width:180px;
+    max-height:330px;
+    padding:5px;
+    background-position:middle;
+    vertical-align:middle;
+    align-self:center;
+}
+button {
+    width:260px;
+    background-color: brown;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:8px;
+    color: #fff;
+    font-family: 'Verdana';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    padding:8px;
+    height:75px
+}
+button:hover {
+    border: none;
+    background:#009999;
+    box-shadow: 0px 0px 1px #fff;
+}
+input[type=submit] {
+    display:none;
+}
+input[type=submit] + label {
+    background-color: brown;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    color: #fff;
+    font-family: 'Verdana';
+    font-size: 20px;
+    text-decoration: bold;
+    cursor: pointer;
+    border:none;
+    padding:8px;
+    display: inline-block;
+}
+label {
+    display: inline-block;
+    height:320px;
+    width:12px;
+    vertical-align:middle;
+}
+input[type=submit] + label:hover {
+    background-color: darkorange;
+    display: inline-block;
+}
+form {
+    display:inline;
+}
+</style>
+</head>
+<body>
+<table>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr>
+  <th align="center" colspan="2"><i><a class="orange" href="/hairstyles/">inspHAIRation</span></a></i>
+</tr>
+<tr></tr>
+<tr>  
+</tr>
+</tr>
+<tr>
+  <td>
+  <form action="/hairstyles/last_search">
+  <input type="radio" name="time" value={{ hairstyle.time_of_day }} checked>
+  <input type="radio" name="length" value={{ hairstyle.length }} checked>
+  <input type="radio" name="texture" value={{ hairstyle.texture }} checked>
+  <input type="radio" name="type" value={{ hairstyle.type }} checked>
+  <input type="radio" name="id" value={{ hairstyle.id }} checked>
+  <input type="submit" value="Back" id="submit1">
+  <label style="border-top-left-radius:10px; border-bottom-left-radius:10px" for="submit1"><br><br><br><br>B<br>A<br>C<br>K<br></label></form>
+  <a href="/hairstyles/{{ hairstyle.id }}/zoom">
+  <!--<h4>{{ hairstyle.name }}</h4>-->
+{% for image in hairstyle.image_set.all %}
+  <span id="box"><img src={{ image.image }}></span>
+{% endfor %}
+  </a>
+  <form action="/hairstyles/next_search">
+  <input type="radio" name="time" value={{ hairstyle.time_of_day }} checked>
+  <input type="radio" name="length" value={{ hairstyle.length }} checked>
+  <input type="radio" name="texture" value={{ hairstyle.texture }} checked>
+  <input type="radio" name="type" value={{ hairstyle.type }} checked>
+  <input type="radio" name="id" value={{ hairstyle.id }} checked>
+  <input type="submit" value="Next" id="submit2"><label style="border-top-right-radius:10px; border-bottom-right-radius:10px" for="submit2"><br><br><br><br>N<br>
+  E<br>X<br>T<br></label>
+  </form>
+  </td>
+  </tr>
+  <tr><td colspan="1">
+<a href="/hairstyles/search"><button>New Search</button></a>
+<!--<a href="/hairstyles/{{ hairstyle.id }}/delete">Delete this Hairstyle! | </a>
+<a href="/hairstyles/">Go Home</a>-->
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+</body>

@@ -1,0 +1,48 @@
+<head>
+<style media="screen" type="text/css">
+table {
+    border-collapse:collapse;
+    background-color:maroon;
+    color:white;
+    font-family:Verdana;
+    text-align:center;
+    border-radius:8px;
+    padding:0px;
+    margin:30px;
+    width:320px;
+    height:568px
+}
+td, th {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+th {
+    font-family:"Mistral";
+    font-size:40px;
+}
+img {
+    height:auto;
+    width:auto;
+    max-width:260px;
+    max-height:548px;
+    padding:5px;
+    background-position:middle;
+}
+</style>
+</head>
+
+<body>
+<a href="/hairstyles/{{ hairstyle.id }}/">
+<table>
+<tr>
+<td>
+{% for image in hairstyle.image_set.all %}
+  <img src={{ image.image }}>
+{% endfor %}
+</td>
+</tr>
+</table>
+</a>
+</body>
